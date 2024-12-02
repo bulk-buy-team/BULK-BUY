@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($input_otp == $_SESSION['otp']) {
             header("Location: reset_password.php"); // Redirect to reset password page
         } else {
-            echo "<script>alert('Invalid OTP.'); window.location.href = 'verify_otp.php';</script>";
+            echo "<script>alert('Invalid OTP.'); a href = 'verify_otp.php';</script>";
         }
     } else {
         echo "<script>alert('OTP expired. Please request a new OTP.'); window.location.href = 'forgot_password.php';</script>";
