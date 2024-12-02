@@ -1,0 +1,112 @@
+# PHP Backend Endpoint Documentation
+
+This document provides the endpoint documentation for the three key processes in the password recovery flow: requesting an OTP, verifying the OTP, and resetting the password. Each endpoint description includes its HTTP method, expected inputs, and outputs.
+
+---
+
+## 1. Request OTP (`request_otp.php`)
+
+### Endpoint
+- **URL**: `/request_otp.php`
+- **Method**: POST
+
+### Inputs
+| Parameter | Type   | Description                        |
+|-----------|--------|------------------------------------|
+| `email`   | String | The email address of the user.     |
+
+### Outputs
+#### Success Response:
+- **Status**: 302 (Redirects to `verify_otp.php`)
+- **Description**: OTP sent to the user's email and redirects to the OTP verification page.
+
+#### Error Response:
+- **Status**: 200
+- **Description**: Displays an alert if the email is not registered.
+- **Example**:
+```html
+<script>alert('Email is not registered.'); window.location.href = 'forgot_password.php';</script>
+```
+
+---
+
+## 2. Verify OTP (`verify_otp.php`)
+
+### Endpoint
+- **URL**: `/verify_otp.php`
+- **Method**: POST
+
+### Inputs
+| Parameter | Type   | Description                  |
+|-----------|--------|------------------------------|
+| `otp`     | String | The one-time password (OTP) |
+
+### Outputs
+#### Success Response:
+- **Status**: 302 (Redirects to `reset_password.php`)
+- **Description**: OTP is valid and user is redirected to the reset password page.
+
+#### Error Response:
+1. **Invalid OTP**:
+   - **Status**: 200
+   - **Description**: Displays an alert for an invalid OTP.
+   - **Example**:
+   ```html
+   <script>alert('Invalid OTP.'); window.location.href = 'verify_otp.php';</script>
+   ```
+
+2. **Expired OTP**:
+   - **Status**: 200
+   - **Description**: Displays an alert if the OTP is expired.
+   - **Example**:
+   ```html
+   <script>alert('OTP expired. Please request a new OTP.'); window.location.href = 'forgot_password.php';</script>
+   ```
+
+---
+
+## 3. Reset Password (`reset_password.php`)
+
+### Endpoint
+- **URL**: `/reset_password.php`
+- **Method**: POST
+
+### Inputs
+| Parameter          | Type   | Description                      |
+|--------------------|--------|----------------------------------|
+| `new_password`     | String | The new password for the user.   |
+| `confirm_password` | String | Confirmation of the new password |
+
+### Outputs
+#### Success Response:
+- **Status**: 200
+- **Description**: Displays a success alert and redirects to the login page.
+- **Example**:
+```html
+<script>alert('Password reset successful.'); window.location.href = 'login.php';</script>
+```
+
+#### Error Response:
+1. **Passwords Do Not Match**:
+   - **Status**: 200
+   - **Description**: Displays an alert if the passwords do not match.
+   - **Example**:
+   ```html
+   <script>alert('Passwords do not match.'); window.location.href = 'reset_password.php';</script>
+   ```
+
+2. **Failed to Reset Password**:
+   - **Status**: 200
+   - **Description**: Displays an alert if there was an error updating the password in the database.
+   - **Example**:
+   ```html
+   <script>alert('Failed to reset password. Please try again.'); window.location.href = 'reset_password.php';</script>
+   ```
+
+---
+
+## Notes
+- Ensure proper email configuration on the server for the OTP email to be delivered.
+- Use HTTPS for secure communication.
+- Add input validation to improve security and user experience.
+
