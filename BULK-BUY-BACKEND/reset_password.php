@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Clear OTP session data
             unset($_SESSION['otp'], $_SESSION['otp_expiry'], $_SESSION['otp_email']);
 
-            echo "<script>alert('Password reset successful.'); window.location.href = 'login.php';</script>";
+            echo "<script>alert('Password reset successful.'); a href = 'login.php';</script>";
         } else {
             echo "<script>alert('Failed to reset password. Please try again.'); window.location.href = 'reset_password.php';</script>";
         }
