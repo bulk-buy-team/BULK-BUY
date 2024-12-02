@@ -46,7 +46,7 @@ if ($conn->connect_error) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/styles/history.css">
+  <link rel="stylesheet" href="assets/styles/faq.css">
   <title>Profile</title>
 </head>
 <body>
@@ -78,29 +78,22 @@ if ($conn->connect_error) {
         <!-- <li><a href="#">Logout</a></li> -->
       </ul>
     </nav>
+        <!-- <li><a href="#">Settings</a></li> -->
   </div>
   <div class="mobile-navbar">
     <nav>
-    <ul>
-          <?php
-            
-            if (isset($_SESSION["user12"])) {
-              echo "<a href='dashboard.php'><li class='Home'><img src='assets/images/home.png' alt=''></li></a>";
-            }
-            elseif (isset($_SESSION["user13"])) {
-              echo "<a href='admin.php'><li class='Home'><img src='assets/images/home.png' alt=''></li></a>";
-            }
-          ?>
-        <a href="product.php"><li class="product"><img src="assets/images/shopping-cart.png" alt=""></li></a>
-        <a href="history.php"><li class="history"><img src="assets/images/calendar.png" alt=""></li></a>
-        <a href="profile.php"><li class="profile"><img src="assets/images/profile.png" alt=""></li></a>
+      <ul>
+        <a href="dashboard.html"><li class="Home"><img src="assets/images/home.png" alt=""></li></a>
+        <a href="product.html"><li class="cart"><img src="assets/images/shopping-cart.png" alt=""></li></a>
+        <a href="history.html"><li class="history"><img src="assets/images/calendar.png" alt=""></li></a>
+        <a href="profile.html"><li class="settings"><img src="assets/images/profile.png" alt=""></li></a>
       </ul>
     </nav>
   </div>
   <main>
     <header>
       <div class="home">
-        <a href="#">Order History</a>
+        <a href="#">FAQs</a>
         <a href="#"><img src="assets/images/bell.png" alt="notification"></a>
       </div>
       <div class="search-bar">
@@ -111,44 +104,48 @@ if ($conn->connect_error) {
       </div>
     </header>
     <div class="main-container">
-   
-      <?php 
-   
-   for ($i=0; $i < count($transaction); $i++) { 
-    $id = $transaction[$i]["transaction_id"];
-    $th_reference = $transaction[$i]["reference"];
-    $th_amount = $transaction[$i]["amount"];
-    $bought_unit = $transaction[$i]["bought_unit"];
-    $th_items = $transaction[$i]["items"];
-    $th_paid = $transaction[$i]["created_at"];
-  
-    echo "
-  
-    </div> 
-     <div class='main-container'>
-      <div class='history-card'>
-        <div class='circle-right'></div>
-        <div class='card-main'>
-          <div class='card-head'>
-            <div>
-              <h1>$bought_unit units of $th_items</h1>
-              <h4>$th_paid</h4>
-            </div>
-            <h4>$th_reference</h4>
-          </div>
-          <div class='card-body'>
-            <h3>Total amount: N$th_amount</h3>
-          </div>
+      <div class="faq-container">
+        <div class="title">
+          <h2>what is bulk buy?</h2>
         </div>
-        <div class='circle-left'></div>
+        <div class="footer">
+          <h3>
+            Bulk buy is a site where you
+            can buy products at bulk by
+            joining a team and paying for the specific units you want
+          </h3>
+        </div>
       </div>
-      </div>";
-}
-
-
-
-?> 
-
+      <div class="faq-container">
+        <div class="title">
+          <h2>How to make payment?</h2>
+        </div>
+        <div class="footer">
+          <h3>
+            making payment is easy, just
+            select the number of units you
+            want and click add me and you
+            will be redirected to one of
+            our payment partners where you
+            can pay with your debit card
+            or transfer
+          </h3>
+        </div>
+      </div>
+      <div class="faq-container">
+        <div class="title">
+          <h2>when and where do i recieve the product?</h2>
+        </div>
+        <div class="footer">
+          <h3>
+            you will recieved the product
+            at our established pickup
+            stations 1 week after all
+            avaliable units of the product
+            are sold out
+          </h3>
+        </div>
+      </div>
     </div>
   </main>
 </body>

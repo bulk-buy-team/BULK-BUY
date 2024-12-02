@@ -67,8 +67,11 @@ $product = $stnt1->fetch_all(MYSQLI_ASSOC);
             ?>
           </li>
         <li><a href="product.php">Products</a></li>
+        <li><a href="./faq.php">FAQ</a></li>
         <li><a href="history.php">Order History</a></li>
         <li><a href="profile.php">Profile</a></li>
+        
+        <li><a href="../BULK-BUY-BACKEND/logout.php">Logout</a></li>
         <!-- <li><a href="#">Support</a></li> -->
         <!-- <li><a href="#">Settings</a></li> -->
         <!-- <li><a href="#">Logout</a></li> -->
@@ -110,8 +113,8 @@ $product = $stnt1->fetch_all(MYSQLI_ASSOC);
       <div class="welcome-user">
         <img src="assets/images/profile-circle.svg" alt="">
         <div class="salutation">
-          <h3>Welcome Emmanuel!</h3>
-          <span>Hi! Welcome back, you've been missed.</span>
+          <?php  echo "<h3>Welcome . $firstname  $lastname!</h3>
+          <span>Hi! Welcome back, you've been missed.</span>" ?>
         </div>
       </div>
       <div class="content-container">

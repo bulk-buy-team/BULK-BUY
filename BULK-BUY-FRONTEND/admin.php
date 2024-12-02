@@ -33,8 +33,11 @@ $email = $user['email'];
       <ul>
       <li><a href="admin.php">Home</a></li>
             <li><a href="product.php">Products</a></li>
+            <li><a href="./faq.php">FAQ</a></li>
             <li><a href="history.php">Order History</a></li>
             <li><a href="profile.php">Profile</a></li>
+            
+        <li><a href="../BULK-BUY-BACKEND/logout.php">Logout</a></li>
         <!-- <li><a href="#">Support</a></li> -->
         <!-- <li><a href="#">Settings</a></li> -->
         <!-- <li><a href="#">Logout</a></li> -->
@@ -59,7 +62,7 @@ $email = $user['email'];
       </div>
       <div class="search-bar">
         <input type="search" name="search" id="search">
-        <input type="submit">
+       
       </div>
     </header>
     <div class="main-container">

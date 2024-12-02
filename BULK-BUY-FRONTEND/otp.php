@@ -1,3 +1,12 @@
+<?php 
+session_start();
+
+$otp = $_SESSION['otp'] ;
+echo $otp;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,16 +45,16 @@
       </div>
       <div class="input-fields">
         <div class="input-container">
-          <input type="text" inputmode="numeric"  id="otp1" maxlength="1" required>
-          <input type="text" id="otp2" inputmode="numeric" maxlength="1" required>
-          <input type="text" id="otp3" inputmode="numeric" maxlength="1" required>
-          <input type="text" id="otp4" inputmode="numeric" maxlength="1" required>
+          <input type="text" name="otp1" inputmode="numeric"  id="otp1" maxlength="1" required>
+          <input type="text" name="otp2" id="otp2" inputmode="numeric" maxlength="1" required>
+          <input type="text" name="otp3" id="otp3" inputmode="numeric" maxlength="1" required>
+          <input type="text" name="otp4" id="otp4" inputmode="numeric" maxlength="1" required>
         </div>
       </div>
       <div class="submit-text">
-        <input type="submit" value="verify" class="submit">
+        <input type="submit" name="submit" value="verify" class="submit">
         <span>Didn't recieve an OTP?</span>
-        <span><a href="#">Resend Code</a></span>
+        <span><a href="../BULK-BUY-BACKEND/email.php">Resend Code</a></span>
       </div>
     </form>
     <div class="hero-image">
@@ -55,6 +64,6 @@
       <div class="circle"></div>
     </span>
   </main>
-<script src="assets/scripts/otp.js"></script>  
+<!-- <script src="assets/scripts/otp.js"></script>   -->
 </body>
 </html>
