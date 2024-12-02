@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 // Database connection
 $servername = "localhost"; // or your server
 $username = "root";        // your database username
@@ -25,13 +26,16 @@ if (isset ($_POST["submit"])) {
         $loginresult = $result->fetch_assoc();
 
         $role = $loginresult['role'];
+       
 
     if ($loginresult && $role) {
-            $_SESSION['user1'] = $loginresult;
-            header("location:../BULK-BUY-FRONTEND/admindashboard.php");
+             $_SESSION["user13"] = $loginresult;
+            // var_dump($_SESSION["user13"]);
+            header("location:../BULK-BUY-FRONTEND/admin.php");
         } else {
-         echo "Error "; 
-         header("location:../BULK-BUY-FRONTEND/dashboard.php");
+          $_SESSION["user12"] = $loginresult;
+          // var_dump($_SESSION["user12"]);
+          header("location:../BULK-BUY-FRONTEND/dashboard.php");
        }
     // Close connection
      $conn->close();
@@ -39,7 +43,7 @@ if (isset ($_POST["submit"])) {
 else {
     echo 'error loging in';
   }
-$conn->close();
+// $conn->close();
 ?>
 
 
