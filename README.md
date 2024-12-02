@@ -118,7 +118,7 @@ As a dedicated team member, I contributed to the development of the following ke
   - **Signup:** Partnered with Iyoke Heritage to implement a smooth registration process for new users.
   - **Landing Page:** Worked with Iyoke Heritage to design and structure the landing page, emphasizing the app's purpose and usability.
 
-### Iyoke Heritage
+### Iyoke Heritage sobechukwu 
 Iyoke Heritage played an integral role in the development of key features, including:
 
 - **Profile Page:** Developed the interface to display user information and allow updates.
