@@ -8,7 +8,7 @@ $user = 'root';
 $password = ''; // Update with your database password
 $database = 'bulk-buy';
 
-$conn = new mysqli($host, $user, $password, $database);
+$conn = mysqli($host, $user, $password, $database);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         header("Location: verify_otp.php"); // Redirect to OTP verification page
     } else {
-        echo "<script>alert('Email is not registered.'); window.location.href = 'forgot_password.php';</script>";
+        echo "<script>alert('Email is not registered.'); aref = 'forgot_password.php';</script>";
     }
 }
 ?>
