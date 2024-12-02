@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         header("Location: verify_otp.php"); // Redirect to OTP verification page
     } else {
-        echo "<script>alert('Email is not registered.'); aref = 'forgot_password.php';</script>";
+        echo "<script>alert('Email is not registered.'); a href = 'forgot_password.php';</script>";
     }
 }
 ?>
