@@ -17,7 +17,45 @@ The **Bulk Buy App** is a platform designed to facilitate collective purchasing,
 
 ## Documentation
 
----
+ulk Buy App Documentation
+
+Overview
+
+The Bulk Buy App is a platform designed to facilitate collective purchasing, enabling users to buy products at wholesale prices. It provides a seamless experience across both mobile and web platforms. The app features essential functionalities like authentication, product browsing, order management, and transaction tracking.
+
+Stack
+
+Frontend (Web): HTML, CSS
+Backend: PHP
+Mobile: React Native
+Documentation
+
+1. Mobile App Documentation (React Native Developer Perspective)
+
+Features
+
+Authentication
+
+Login: Allows users to authenticate using their email and password. An API endpoint validates the credentials and returns a session token.
+Signup: Enables new users to create an account with details such as name, email, and password.
+Forgot Password: Users can initiate a password reset request. An email is sent via the backend API with a reset link or code.
+Reset Password: Completes the password reset process using the token received.
+Product List
+
+Fetches the list of available products for purchase from the backend.
+Displays product details like name, price per unit, total units, and remaining units.
+Profile
+
+Displays user details such as name, email, and profile picture.
+Provides an option to edit profile information via an API call.
+Transaction History
+
+Fetches and displays a list of all successfully purchased products.
+Includes details like product name, amount, and date of purchase.
+Order
+
+Allows users to place orders for a selected product.
+Sends the order data (user ID, product ID, and quantity) to the backend for processing.
 
 ### **1. Mobile App Documentation (React Native Developer Perspective)**
 
