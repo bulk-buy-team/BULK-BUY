@@ -1,9 +1,9 @@
-const form = document.getElementById('form')
+const form = document.querySelector('form')
 const submit = document.querySelector('.submit')
 const comfirmPasswrd = document.getElementById('comfirmPasswrd')
-
 let hamburger = document.querySelector(".hamburger");
 let menu = document.querySelector("ul");
+
 
 hamburger.addEventListener("click", ()=>{
     menu.classList.toggle("mobile-nav-list");
@@ -12,7 +12,7 @@ hamburger.addEventListener("click", ()=>{
 
 //simple fumctiom for comaping passwords 
 //has not been properly implemented
-function comparePassword(pswrd1 , pswrd2){
+/*function comparePassword(pswrd1 , pswrd2){
   
 }
 
@@ -24,7 +24,7 @@ comfirmPasswrd.addEventListener('keydown', (e) => {
 })
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault()
+  e.preventDefault();
 })
 
 submit.addEventListener('submit', (e) => {
@@ -34,7 +34,7 @@ submit.addEventListener('submit', (e) => {
   let email = formData.get('email');
   let password = formData.get('password');
   let confirmpswrd = formData.get('comfirmPasswrd');
-  cons
+
   if(confirmPswrd === password){
     axios.post('/endpoint',{
       firstname: firstName,
@@ -49,4 +49,4 @@ submit.addEventListener('submit', (e) => {
   }else{
     alert("not the same")
   }
- })
+ })*/

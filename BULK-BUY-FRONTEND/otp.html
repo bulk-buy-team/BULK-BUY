@@ -10,7 +10,7 @@
 <body>
   <header>
     <nav>
-      <a href="index.html" class="logo"><img src="assets/iages/logo.PNG" alt=""></a>
+      <a href="index.html" class="logo"><img src="assets/images/logo.PNG" alt=""></a>
       <ul>
         <!-- <form method="" class="search">
           <input type="text" name="search" id="search">
@@ -29,21 +29,21 @@
     </nav>
   </header>
   <main>
-    <form action="">
+    <form action="../BULK-BUY-BACKEND/otp.php" method="post">
       <div class="sign-in-text">
         <h2>Verify Code</h2>
         <span>A verification code has been sent to your email</span>
       </div>
       <div class="input-fields">
         <div class="input-container">
-          <input type="number" id="otp1" maxlength="1" required="true">
-          <input type="number" id="otp2" maxlength="1" required="true">
-          <input type="number" id="otp3" maxlength="1" required="true">
-          <input type="number" id="otp4" maxlength="1" required="true">
+          <input type="text" inputmode="numeric"  id="otp1" maxlength="1" required>
+          <input type="text" id="otp2" inputmode="numeric" maxlength="1" required>
+          <input type="text" id="otp3" inputmode="numeric" maxlength="1" required>
+          <input type="text" id="otp4" inputmode="numeric" maxlength="1" required>
         </div>
       </div>
       <div class="submit-text">
-        <input type="submit" value="verify">
+        <input type="submit" value="verify" class="submit">
         <span>Didn't recieve an OTP?</span>
         <span><a href="#">Resend Code</a></span>
       </div>
